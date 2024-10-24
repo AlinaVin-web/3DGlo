@@ -1,5 +1,9 @@
 import timer from "./modules/timer";
-import twoModule from "./modules/two";
+import menu from "./modules/menu";
+import modal from "./modules/modal";
+import scroll from "./modules/scroll";
 
 timer('25 october 2024');
-twoModule();
+menu();
+modal();
+scroll();
