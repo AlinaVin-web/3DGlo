@@ -6,7 +6,7 @@ const scroll = () => {
 
 
     const scrollAnimation = (toElem) => {
-        scrollCount += 15;
+        scrollCount += 30;
         idAnimation = requestAnimationFrame(() => { scrollAnimation(toElem) });
         if (scrollCount <= toElem) scrollTo(0, scrollCount);
         else cancelAnimationFrame(idAnimation);

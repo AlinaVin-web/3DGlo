@@ -7,7 +7,7 @@ const modal = () => {
     let pos;
 
     const modalAnimation = () => {
-        pos++;
+        pos += 2;
         idAnimation = requestAnimationFrame(modalAnimation);
         if (pos <= 10) modalContent.style.top = `${pos}%`;
         else cancelAnimationFrame(idAnimation);
