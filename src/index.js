@@ -3,7 +3,7 @@ import toggleMenu from "./modules/menu";
 import modal from "./modules/modal";
 import scroll from "./modules/scroll";
 import checkFields from "./modules/check-fields";
-import calcForm from "./modules/calc-form";
+import calc from "./modules/calc";
 import tabs from "./modules/tabs"
 import slider from "./modules/slider"
 
@@ -12,6 +12,6 @@ toggleMenu();
 modal();
 scroll();
 checkFields();
-calcForm();
+calc(100);
 tabs();
 slider('.portfolio-content', '.portfolio-item', '.portfolio-dots', 'portfolio-item-active', 'dot-active');
