@@ -28,7 +28,7 @@ const calc = (price = 100) => {
         }
 
         if (calcType.value && calcSquare.value) {
-            totalValue = price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+            totalValue = Math.round(price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue);
         } else {
             totalValue = 0;
         }
@@ -44,12 +44,11 @@ const calc = (price = 100) => {
             }, 20);
         }
     }
-    calcBlock.addEventListener('change', (e) => {
+    calcBlock.addEventListener('input', (e) => {
         if (e.target === calcType || e.target === calcSquare ||
             e.target === calcCount || e.target === calcDay) {
             countCalc();
         }
-
     });
 
     inputs.forEach((value) => {
