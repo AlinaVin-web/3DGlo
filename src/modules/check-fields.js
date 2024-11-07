@@ -1,22 +1,28 @@
 const checkFields = () => {
 
-    const inputsText = document.querySelectorAll('form[name="user_form"] input:not([type="email"],[type="tel"])');
-    const inputsTel = document.querySelectorAll('form[name="user_form"] input[type="tel"]');
-    const inputsEmail = document.querySelectorAll('form[name="user_form"] input[type="email"]');
+    const inputsName = document.querySelectorAll('form[name="user_form"] input[name="user_name"]');
+    const inputsText = document.querySelectorAll('form[name="user_form"] input[name="user_message"]');
+    const inputsTel = document.querySelectorAll('form[name="user_form"] input[name="user_phone"]');
+    const inputsEmail = document.querySelectorAll('form[name="user_form"] input[name="user_email"]');
 
+    inputsName.forEach((value) => {
+        value.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^а-яА-я ]/g, '');
+        });
+    });
     inputsText.forEach((value) => {
         value.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^а-яА-я -]/g, '');
+            e.target.value = e.target.value.replace(/[^а-яА-я\d \.,\-\!()\"\:]/g, '');
         });
     });
     inputsTel.forEach((value) => {
         value.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^\d()-]/g, '');
+            e.target.value = e.target.value.replace(/[^\d()\-\+]/g, '');
         });
     });
     inputsEmail.forEach((value) => {
         value.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^\w@\-.!~*']/g, '');
+            e.target.value = e.target.value.replace(/[^\w@\-\.!~\*']/g, '');
         });
     });
 

@@ -6,8 +6,9 @@ import checkFields from "./modules/check-fields";
 import calc from "./modules/calc";
 import tabs from "./modules/tabs"
 import slider from "./modules/slider"
+import sendForm from "./modules/sendForm";
 
-timer('25 october 2024');
+timer('20 november 2024');
 toggleMenu();
 modal();
 scroll();
@@ -15,3 +16,30 @@ checkFields();
 calc(100);
 tabs();
 slider('.portfolio-content', '.portfolio-item', '.portfolio-dots', 'portfolio-item-active', 'dot-active');
+sendForm({
+    formId: 'form1',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+});
+sendForm({
+    formId: 'form2',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+});
+sendForm({
+    formId: 'form3',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+});
