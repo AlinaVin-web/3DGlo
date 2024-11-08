@@ -2,11 +2,10 @@ const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId);
     const statusBlock = document.createElement('div');
     const img = document.createElement("img");
-    img.src = "././images/loader.gif";
-
     const errorText = 'Ошибка';
-    const successText = 'Спасибо! Наш менеджер с Вами свяжется'
+    const successText = 'Спасибо! Наш менеджер с Вами свяжется';
 
+    img.src = "././images/loader.gif";
     statusBlock.style.color = '#ffffff';
 
     const validate = (list) => {
@@ -34,12 +33,10 @@ const sendForm = ({ formId, someElem = [] }) => {
         const formData = new FormData(form);
         const formBody = {};
 
-
-
         img.alt = "Loading";
         img.width = 50;
         img.height = 50;
-        statusBlock.appendChild(img);
+        statusBlock.append(img);
         form.append(statusBlock);
 
         formData.forEach((val, key) => {
@@ -63,13 +60,18 @@ const sendForm = ({ formId, someElem = [] }) => {
                     formElements.forEach(input => {
                         input.value = '';
                     });
+                    setTimeout(() => statusBlock.textContent = '', 4000);
+
                 })
                 .catch(error => {
                     statusBlock.textContent = errorText;
+                    setTimeout(() => statusBlock.textContent = '', 4000);
                 });
         } else {
             statusBlock.textContent = errorText;
+            setTimeout(() => statusBlock.textContent = '', 4000);
         }
+
     }
     try {
         if (!form) {
